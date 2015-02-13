@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>State</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+
+  <!-- contaner node -->
+  <div id="jsx"></div>
+
+  <!-- container node -->
+  <div id="dom"></div>
+
+  <script src="http://fb.me/react-0.11.2.js"></script>
+  <script src="http://fb.me/JSXTransformer-0.11.2.js"></script>
+  <script type="text/jsx">
+  /** @jsx React.DOM */
+
+  var MessageBox = React.createClass({
+
+    getInitialState: function() {
+      return {
+        isVisible: true,
+        titleMessage: 'Hello, World'
+      }
+    },
+
+    render: function() {
+
+      var inlineStyles = {
+        display: this.state.isVisible ? 'block' : 'none'
+      }
+
+      return (
+        <div className="container jumbotron" style={inlineStyles}>
+          <h1>{this.state.titleMessage}</h1>
+          <SubMessage />
+        </div>
+      )
+    }
+  });
+
+  var SubMessage = React.createClass({
+    render: function() {
+      return (
+        <small>Its good to see you</small>
+      );
+    }
+  })
+
+  var reactComponent = React.renderComponent(
+    <MessageBox />,
+    document.getElementById('jsx')
+  );
+
+  </script>
+</body>
+</html>
