@@ -1,0 +1,15 @@
+{
+  "name": "1.14-react-tools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "jsx --watch src/ build/"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "react-tools": "^0.12.2"
+  }
+}
